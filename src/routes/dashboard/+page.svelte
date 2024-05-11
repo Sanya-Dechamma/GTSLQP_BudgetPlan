@@ -138,6 +138,7 @@ function handleRefreshClick() { //clear out items
           <option value="Subscription">Subscriptions</option>
           <option value="Pet Expenses">Pet expenses</option>
           <option value="Mortgage">Mortgage</option>
+          <option value="Stationery Items">Stationery Items</option>
           <option value="Repairs & Maintenance">Repairs & Maintenance</option>
           <option value="Other">Other</option>
       </select>
