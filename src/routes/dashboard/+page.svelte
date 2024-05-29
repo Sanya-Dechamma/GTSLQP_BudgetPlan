@@ -61,7 +61,20 @@ function handleCalculateClick() {
     totalAmount = budgetResults.totalAmount;
     exceededBudget = budgetResults.exceededBudget;
     savedBudget = budgetResults.savedBudget;
+
+    const messageElement = document.getElementById("budget-message");
+  if (exceededBudget > 0) {
+    messageElement.textContent = "Oh, no no!! Looks like your expenses are giving your wallet a workout! It's time to cut back on the splurges, mate! ";
+    messageElement.style.color = "red";
+  } else if (savedBudget > 0) {
+    messageElement.textContent = "Kudos! Your wallet is breathing a sigh of relief! Keep up the great work! You've mastered the art of saving! ";
+    messageElement.style.color = "green";
+  } else {
+    messageElement.textContent = "";
   }
+
+}
+
 
   function handleDelete(expenseDisplay, expenseItem) {
     const index = Array.from(expenseDisplay.children).indexOf(expenseItem);
@@ -80,6 +93,9 @@ function handleRefreshClick() { //clear out items
     totalAllocatedBudget = 0;
     document.getElementById('expense-display').innerHTML = '';
 
+    const messageElement = document.getElementById("budget-message");
+    messageElement.textContent = "";
+    messageElement.classList.remove("error", "success");
 }
 </script>
 
@@ -173,7 +189,6 @@ function handleRefreshClick() { //clear out items
           <span>Saved Budget Amount :</span>
           <span id="saved-budget">${savedBudget}</span>
         </div>
-        
         <div class="calculate-button">
             <button class="calculate" on:click={handleCalculateClick}>
               <i class="fa-solid fa-calculator"></i><span style="gap: 10px;"></span>Calculate
@@ -181,7 +196,10 @@ function handleRefreshClick() { //clear out items
           </div>
    
       </div>
-    </div>
+
+      <div id="budget-message"></div>
+     
+        </div>
 
 
         <style>
@@ -402,4 +420,16 @@ function handleRefreshClick() { //clear out items
 .refresh-button:hover {
     background-color: #65afc1;
 }
+
+#budget-message {
+  position: absolute;
+  right: 40px; /* Adjust this value to position the message horizontally */
+  bottom: 20% ; /* Adjust this value to position the message vertically */
+  font-style: italic;
+  font-size: 30px;
+  white-space: pre-wrap;
+  width: 500px; /* Adjust this value to control the width of the message */
+  text-align: center;
+}
+
   </style>

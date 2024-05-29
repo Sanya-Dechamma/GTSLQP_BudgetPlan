@@ -16,6 +16,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"chart.js": "^4.4.3",
 		"firebase": "^10.11.1"
 	}
 }
