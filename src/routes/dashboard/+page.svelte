@@ -25,7 +25,7 @@ function handleFormSubmit(event) {
     const expenseDisplay = document.getElementById('expense-display');
     const expenseItem = document.createElement('div');
     expenseItem.classList.add('expense-item'); 
-    expenseItem.style.marginBottom = '15px';  //display&add class
+    expenseItem.style.marginBottom = '15px';  
 
     const expenseText = document.createTextNode(` ${expenseCategory}: $${expenseAmount}`);
 
@@ -83,7 +83,7 @@ function handleCalculateClick() {
         expenses.splice(index, 1);
         expenses = [...expenses]; // Trigger 
     }
-}
+} 
 
 function handleRefreshClick() { //clear out items
     expenses = [];
@@ -423,12 +423,12 @@ function handleRefreshClick() { //clear out items
 
 #budget-message {
   position: absolute;
-  right: 40px; /* Adjust this value to position the message horizontally */
-  bottom: 20% ; /* Adjust this value to position the message vertically */
+  right: 40px; 
+  bottom: 20% ; 
   font-style: italic;
   font-size: 30px;
   white-space: pre-wrap;
-  width: 500px; /* Adjust this value to control the width of the message */
+  width: 500px; 
   text-align: center;
 }
 

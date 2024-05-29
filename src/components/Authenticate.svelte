@@ -28,7 +28,7 @@
             await authHandlers.signup(email, password);
           }
           } catch (err) {
-              console.log("Apologies, error", err);
+              console.log("Error", err);
               error = true;
           }       
       }
